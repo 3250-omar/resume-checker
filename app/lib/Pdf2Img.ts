@@ -15,10 +15,9 @@ export interface PdfConversionResult {
     isLoading = true;
   
     loadPromise = import("pdfjs-dist").then(async (lib) => {
-      const { default: workerSrc } = await import("pdfjs-dist/build/pdf.worker.entry");
-  
-      lib.GlobalWorkerOptions.workerSrc = workerSrc;
-  
+      const workerModule = await import("pdfjs-dist/build/pdf.worker.entry");
+      lib.GlobalWorkerOptions.workerSrc = workerModule.default;
+      // ...
       pdfjsLib = lib;
       isLoading = false;
       return lib;

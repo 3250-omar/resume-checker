@@ -1,5 +1,6 @@
 import { prepareInstructions } from "Constants";
 import { useState, type FormEvent } from "react";
+import { useNavigate } from "react-router";
 import FileUploader from "~/components/fileUploader";
 import { convertPdfToImage } from "~/lib/Pdf2Img";
 import { usePuterStore } from "~/lib/puter";
@@ -23,6 +24,7 @@ const Upload = () => {
   const [statusText, setStatusText] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const { fs, kv, ai } = usePuterStore();
+  const navigate = useNavigate();
   const handleAnalize = async ({
     companyName,
     jobTitle,
@@ -72,6 +74,7 @@ const Upload = () => {
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Your resume is analysed , redirecting .....");
     console.log(data);
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
