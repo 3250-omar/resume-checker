@@ -1,16 +1,19 @@
-
 import ResumeCard from "~/components/ResumeCard";
 import { usePuterStore } from "~/lib/puter";
 import { Link, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 
-export const meta = () => ({
-  title: "Resumeee",
-  meta: [
-    { name: "description", content: "Smart feedback for your dream job!" },
-  ],
-});
-
+export const meta = [
+  {
+    title: "Resumeee",
+    meta: [
+      {
+        name: "description",
+        content: "Smart feedback for your dream job!",
+      },
+    ],
+  },
+];
 export default function Home() {
   const { auth, kv, fs } = usePuterStore();
   const navigate = useNavigate();
