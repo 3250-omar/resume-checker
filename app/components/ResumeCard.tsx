@@ -4,7 +4,7 @@ import ScoreCircle from "./Score";
 import { usePuterStore } from "~/lib/puter";
 
 const ResumeCard = ({
-  resume: { jobTitle, companyName, imagePath, feedback, id },
+  resume: { jobTitle, companyName, imagePath, feedback, uuid },
 }: {
   resume: Resume;
 }) => {
@@ -21,7 +21,7 @@ const ResumeCard = ({
   }, [imagePath]);
   return (
     <Link
-      to={`/resume/${id}`}
+      to={`/resume/${uuid}`}
       className="resume-card animate-in fade-in duration-1000"
     >
       <div className="resume-card-header">

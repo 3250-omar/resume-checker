@@ -13,10 +13,10 @@ const Category = ({ title, score }: { title: string; score: number }) => {
     <div className="resume-summary">
       <div className="category">
         <div className="flex gap-2 items-center justify-center">
-          <p className="text-2xl font-semibold">{title}</p>
+          <p className="text-xl font-semibold">{title}</p>
           <ScoreBadge score={score} />
         </div>
-        <p className="text-2xl font-semibold">
+        <p className="text-xl font-semibold">
           <span className={scoreColor}>{score}</span>
           <span className="text-gray-400">/100</span>
         </p>

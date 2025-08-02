@@ -47,13 +47,14 @@ export default function Home() {
             <h2>Upload your resume to get feedback against ATS</h2>
           )}
         </div>
-        {!loadingResume && resumes.length > 0 ? (
+        {!loadingResume && resumes.length > 0 && (
           <div className="resumes-section">
             {resumes?.map((resume) => (
               <ResumeCard key={resume.id} resume={resume} />
             ))}
           </div>
-        ) : (
+        )}
+        {!loadingResume && resumes.length === 0 && (
           <div className="flex justify-center items-center w-full">
             <Link to="/upload">
               <button className="primary-button">Upload Resume</button>

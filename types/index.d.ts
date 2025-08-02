@@ -12,6 +12,7 @@ interface Job {
     imagePath: string;
     resumePath: string;
     feedback: Feedback;
+    uuid?: string;
   }
   
   interface Feedback {
