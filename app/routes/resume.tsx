@@ -4,11 +4,10 @@ import ATS from "~/components/ATS";
 import Details from "~/components/Details";
 import Summary from "~/components/Summary";
 import { usePuterStore } from "~/lib/puter";
-export const meta = [
-  {
-    title: "Resume | OverView ",
-  },
-];
+export const meta = () => ({
+  title: "Resume | OverView",
+  meta: []
+});
 const resume = () => {
   const { id } = useParams();
   const { fs, kv, auth, isLoading } = usePuterStore();

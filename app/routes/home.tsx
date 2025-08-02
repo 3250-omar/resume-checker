@@ -5,12 +5,12 @@ import { usePuterStore } from "~/lib/puter";
 import { Link, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Resumeee" },
-    { name: "description", content: "Smart feedback for your dreem job!" },
-  ];
-}
+export const meta = () => ({
+  title: "Resumeee",
+  meta: [
+    { name: "description", content: "Smart feedback for your dream job!" }
+  ]
+});
 
 export default function Home() {
   const { auth, kv, fs } = usePuterStore();

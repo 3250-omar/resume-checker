@@ -4,13 +4,15 @@ import FileUploader from "~/components/fileUploader";
 import { convertPdfToImage } from "~/lib/Pdf2Img";
 import { usePuterStore } from "~/lib/puter";
 import { prepareInstructions } from "~/constants/index";
-export const meta = [
-  { title: "Upload Your Resume" },
-  {
-    name: "description",
-    content: "Upload your resume to get feedback against ATS",
-  },
-];
+export const meta = () => ({
+  title: "Upload Your Resume",
+  meta: [
+    {
+      name: "description",
+      content: "Upload your resume to get feedback against ATS",
+    },
+  ]
+});
 
 interface AnalyseProps {
   companyName: string;
