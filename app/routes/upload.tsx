@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import FileUploader from "~/components/fileUploader";
 import { convertPdfToImage } from "~/lib/Pdf2Img";
 import { usePuterStore } from "~/lib/puter";
-import { prepareInstructions } from "../../constants/index";
+import { prepareInstructions } from "~/constants/index";
 export const meta = [
   { title: "Upload Your Resume" },
   {
